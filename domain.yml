@@ -1,0 +1,100 @@
+actions:
+- action_ask_email_address
+- action_check_location
+- action_email_restaurants_details
+- action_search_restaurants
+- utter_ask_budget
+- utter_ask_cuisine
+- utter_ask_email
+- utter_ask_howcanhelp
+- utter_ask_location
+- utter_confirm_no_email_bye
+- utter_confirm_yes_email_bye
+- utter_default
+- utter_dont_serve_location
+- utter_enter_valid_emailid
+- utter_goodbye
+- utter_greet
+- utter_should_send_email
+entities:
+- confirm
+- cuisine
+- email
+- location
+- price
+intents:
+- confirm
+- greet
+- restaurant_search
+- affirm
+- decline
+- goodbye
+- stop
+responses:
+  utter_ask_budget:
+  - buttons:
+    - payload: lessthan300
+      title: Less than Rs. 300
+    - payload: between300to700
+      title: Rs. 300 to Rs. 700
+    - payload: morethan700
+      title: More than 700
+    text: what is the average budget for two people?
+  utter_ask_cuisine:
+  - buttons:
+    - payload: Chinese
+      title: Chinese
+    - payload: Mexican
+      title: Mexican
+    - payload: Italian
+      title: Italian
+    - payload: American
+      title: American
+    - payload: South Indian
+      title: South Indian
+    - payload: North Indian
+      title: North Indian
+    text: what kind of cuisine would you like?
+  utter_ask_email:
+  - text: To what email id should I send it to?
+  utter_ask_howcanhelp:
+  - text: how can I help you?
+  utter_ask_location:
+  - text: In what location?
+  utter_confirm_no_email_bye:
+  - text: Okay. Bon Appetit!
+  utter_confirm_yes_email_bye:
+  - text: Sent. Bon Appetit!
+  utter_default:
+  - text: i cannot understand
+  utter_dont_serve_location:
+  - text: Sorry, we don’t operate in that area yet. Can you please specify some other
+      location?
+  utter_enter_valid_emailid:
+  - text: Oops! There seems to be a typo in your email Id, please enter a valid email.
+  utter_goodbye:
+  - text: goodbye :(
+  - text: Bye-bye
+  utter_greet:
+  - text: hey there! How may i help you
+  - text: Hi, How can I help you!
+  - text: Hey, How is it going. How May I help you Today
+  - text: Hi there! How may I help you?
+  utter_should_send_email:
+  - text: Should I send you details of all the restaurants on email?
+session_config:
+  carry_over_slots_to_new_session: true
+  session_expiration_time: 0
+slots:
+  cuisine:
+    type: text
+  email:
+    type: text
+  location:
+    type: text
+  location_found:
+    type: text
+  price:
+    type: text
+  search_results:
+    type: list
